@@ -226,16 +226,18 @@ The project uses two ESP32 boards and a laptop for processing.
 
 Before assembling the system, the required hardware components are shown below.
 
-![Hardware Components](imagescomponents.jpg)
+<img src="imagescomponents.jpg" alt="Hardware Components" width="800">
 
+---
 
 ### 2. The ESP32-CAM Struggle 📷💀
 
 Before getting to the actual drowsiness detection, we had to make the ESP32-CAM behave first!\
 A *lot* of time went into testing the camera, adjusting the **video quality, resolution, and FPS**, and finding settings that gave us a smooth and usable video stream.
 
-![ESP32-CAM Testing](imagesp32-cam-testing.jpg)
+<img src="imagesp32-cam-testing.jpg" alt="ESP32-CAM Testing" width="800">
 
+---
 
 ### 3. Downloading Libraries... Slowly 🐌
 
@@ -244,8 +246,9 @@ Once the camera was finally behaving, we had another challenge: installing all t
 The internet had other plans.\
 Downloading and installing the libraries with our **slow internet connection** took surprisingly long — but eventually, we got everything set up! 😭
 
-![Library Installation](imageslibrary-installation.jpg)
+<img src="imageslibrary-installation.jpg" alt="Library Installation" width="800">
 
+---
 
 ### 4. Eyes: Open or Closed? 👀
 
@@ -253,8 +256,9 @@ After surviving the ESP32-CAM setup and the library download boss fight, it was 
 
 The first detection we implemented was **eye-state detection** — identifying whether the eyes were **open or closed**. Thankfully, this part came together pretty quickly! ⚡
 
-![Eye Detection](imageseye-detection.jpg)
+<img src="imageseye-detection.jpg" alt="Eye Detection" width="800">
 
+---
 
 ### 5. Hardware Setup — Surprisingly Easy 🔌😌
 
@@ -262,8 +266,9 @@ After the software-side struggles, we finally got to the hardware setup.
 
 Thankfully, connecting the ESP32 and ESP32-CAM and getting the required hardware connections in place was **pretty straightforward and quick**. No major drama this time. 😭😂
 
-![Hardware Setup](imageshardware-setup.jpg)
+<img src="imageshardware-setup.jpg" alt="Hardware Setup" width="800">
 
+---
 
 ### 6. The UI Never Wanted to Cooperate 🫠💻
 
@@ -275,8 +280,9 @@ Getting the right UI, proper communication between the two ESPs, and everything 
 
 Eventually, we found a UI that actually worked the way we wanted. 🎉
 
-![UI Testing](imagesui-testing.jpg)
+<img src="imagesui-testing.jpg" alt="UI Testing" width="800">
 
+---
 
 ### 7. The First Raw Setup 🔌💀
 
@@ -288,4 +294,6 @@ The wiring, however, was an entirely different story. 😭😂
 
 At this stage, the setup was fully functional but absolutely covered in messy wires. It wasn't pretty, but hey — if it works, it works! 💀
 
-![Raw Hardware Setup](imagesraw-setup.jpg)
+<img src="imagesraw-setup.jpg" alt="Raw Hardware Setup" width="800">
+
+---
