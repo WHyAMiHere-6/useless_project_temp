@@ -303,4 +303,4 @@ After surviving the messy prototype stage, we finally cleaned everything up and 
 
 The final setup keeps the wiring organized and connects the ESP32, OLED, LEDs, buzzer, and push button in a much cleaner configuration. 🎉
 
-<img src="images/imagespolished-circuit.jpg" alt="Polished Circuit" width="800">
+<img src="images/imagespolished-circuit.jpg" >
