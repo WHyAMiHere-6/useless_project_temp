@@ -13,9 +13,7 @@
 - Team Lead: **ANSHA MEHRIN M N** - MODEL ENGINEERING COLLEGE
 - Member 2: **ABHAY ARAKKAL** - MODEL ENGINEERING COLLEGE
 
-### Team Photo
 
-![Team Photo](team-photo.jpg)
 
 ---
 
