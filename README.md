@@ -1,8 +1,6 @@
 <img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
-
-
-# Shut Eye Alarm 😴⏰
+# Sleep.exe
 
 ## Basic Details
 
@@ -10,28 +8,28 @@
 
 ### Team Members
 
-- Team Lead: **ANSHA MEHRIN M N** - MODEL ENGINEERING COLLEGE THRIKKAKARA
-- Member 2: **ABHAY ARAKKAL** - MODEL ENGINEERING COLLEGE THRIKKAKARA
-
-
+* Team Lead: **ANSHA MEHRIN M N** - MODEL ENGINEERING COLLEGE THRIKKAKARA
+* Member 2: **ABHAY ARAKKAL** - MODEL ENGINEERING COLLEGE THRIKKAKARA
 
 ---
 
 ## Project Description
 
-**Shut Eye Alarm** is a reverse alarm clock designed to make sure you
-actually go to sleep instead of waking you up.
+**Sleep.exe** is a reverse alarm clock designed to do the exact opposite of what a normal alarm clock does.
 
-At the user's scheduled bedtime, the alarm starts ringing and continues
-to annoy the user until an **ESP32-CAM detects that their eyes are closed**.
+Instead of helping the user wake up in the morning, **Sleep.exe tries to make them go back to sleep.**
 
-Using computer vision, the system checks whether the user appears to be
-asleep. Once the eyes are detected as closed for a certain period, the
-alarm turns off.
+At the user's scheduled wake-up time, the alarm starts buzzing. The system uses an **ESP32-CAM** to monitor the user's face and **computer vision** to determine whether their eyes are open or closed.
+
+* 👁️ **Eyes open → Buzzer ON**
+* 😴 **Eyes closed → Buzzer OFF**
+* 👀 **Eyes open again → Buzzer ON again**
+
+The alarm only stops when the system detects that the user has gone back to sleep.
 
 In short:
 
-> **An alarm clock that annoys you until you sleep! 😂**
+> **An alarm clock that gets angry when you wake up! 😂**
 
 ---
 
@@ -39,35 +37,41 @@ In short:
 
 We already have alarm clocks that wake people up.
 
-But there is one extremely important problem that nobody asked us to solve:
+But we discovered another extremely important problem that nobody asked us to solve:
 
-### "What if I don't go to sleep?" 😭
+### **"What if I actually wake up when I have to?"** 😭
 
-People stay awake scrolling through their phones, watching videos,
-talking, gaming, or simply refusing to sleep.
+Early mornings are painful.
 
-So we created a completely unnecessary solution to this completely
-unnecessary problem.
+You have college.
+You have work.
+You have deadlines.
+
+And sometimes all you really want to do is:
+
+> **GO BACK TO SLEEP.**
+
+So instead of creating another system to improve productivity, we decided to create a completely unnecessary system that actively discourages it.
 
 ---
 
 ## The Solution (that nobody asked for)
 
-**Shut Eye Alarm** is a reverse alarm clock.
+**Sleep.exe** is a reverse alarm clock that rewards the user for going back to sleep.
 
-Instead of waking the user up, it makes sure the user actually goes to sleep.
-
-At the scheduled bedtime:
+At the scheduled wake-up time:
 
 1. The alarm starts buzzing.
-2. The ESP32-CAM starts monitoring the user's face.
-3. The camera checks the user's eyes using computer vision.
-4. If the eyes are still open, the buzzer continues.
-5. Once the system detects that the eyes are closed continuously for a
-   specified period, the buzzer turns OFF.
-6. The LED indicates the current system/alarm status.
+2. The ESP32-CAM captures the user's face.
+3. The camera feed is processed using computer vision.
+4. The system determines whether the user's eyes are **open or closed**.
+5. If the eyes are open, the buzzer continues to annoy the user.
+6. Once the eyes remain closed for a specified period, the buzzer turns OFF.
+7. If the user opens their eyes again, the buzzer starts again.
 
-Because apparently, **sleeping now needs verification.** 😂
+Because apparently,
+
+> **even sleeping now needs verification.** 😂
 
 ---
 
@@ -77,26 +81,62 @@ Because apparently, **sleeping now needs verification.** 😂
 
 ### For Software
 
-- Arduino/C++
-- Arduino IDE
-- ESP32 programming environment
-- ESP32-CAM computer vision
-- ESP32-compatible face/eye detection library or model
-- Embedded image processing
-
-> The exact computer vision library/model will be finalized and tested
-> during the project build.
+* C++
+* Arduino IDE
+* ESP32 programming environment
+* Python
+* OpenCV
+* Wi-Fi communication
+* Embedded image processing
+* GitHub
 
 ### For Hardware
 
-- ESP32
-- ESP32-CAM
-- Buzzer
-- Push button
-- LED
-- Jumper wires
-- Breadboard
-- USB/power supply
+* ESP32-CAM (AI-Thinker)
+* ESP32 DevKit
+* Buzzer
+* OLED display
+* Push button
+* LED
+* Resistors
+* Jumper wires
+* Breadboard
+* USB programmer
+* USB/power supply
+
+---
+
+# System Architecture
+
+The project uses two ESP32 boards and a laptop for processing.
+
+```text
+       📷 ESP32-CAM
+             │
+             │ Wi-Fi
+             ▼
+       💻 Laptop
+             │
+       Python + OpenCV
+             │
+       Eye Detection
+             │
+       ┌─────┴─────┐
+       │           │
+    👁️ OPEN     😴 CLOSED
+       │           │
+       ▼           ▼
+   🔊 BUZZER     🔇 OFF
+       │           │
+       └─────┬─────┘
+             │
+             ▼
+        ESP32 DevKit
+             │
+        ┌────┴────┐
+        ▼         ▼
+     🔊 Buzzer   📺 OLED
+```
 
 ---
 
@@ -106,13 +146,14 @@ Because apparently, **sleeping now needs verification.** 😂
 
 ```text
               ┌────────────────────┐
-              │   User sets        │
-              │   bedtime/alarm    │
+              │ User sets wake-up  │
+              │       time         │
               └─────────┬──────────┘
                         │
                         ▼
               ┌────────────────────┐
-              │   Bedtime reached  │
+              │   Wake-up time     │
+              │      reached       │
               └─────────┬──────────┘
                         │
                         ▼
@@ -122,9 +163,17 @@ Because apparently, **sleeping now needs verification.** 😂
                         │
                         ▼
               ┌────────────────────┐
-              │   ESP32-CAM 📷     │
+              │    ESP32-CAM 📷    │
               │ Captures user's    │
-              │ face                │
+              │      face          │
+              └─────────┬──────────┘
+                        │
+                   Wi-Fi Stream
+                        │
+                        ▼
+              ┌────────────────────┐
+              │   Laptop 💻        │
+              │ Python + OpenCV    │
               └─────────┬──────────┘
                         │
                         ▼
@@ -138,12 +187,41 @@ Because apparently, **sleeping now needs verification.** 😂
               Eyes Open    Eyes Closed
                   │           │
                   ▼           ▼
-              Keep          Confirm
-              buzzing       for a few
-                            seconds
+             🔊 BUZZER ON   Confirm for
+                            a few seconds
                                 │
                                 ▼
                          ┌─────────────┐
-                         │  Buzzer OFF │
+                         │  BUZZER OFF │
                          │     😴      │
                          └─────────────┘
+                                │
+                                ▼
+                         Eyes open again?
+                                │
+                               YES
+                                │
+                                ▼
+                         🔊 BUZZER ON
+```
+
+---
+
+# Expected Behaviour
+
+| User State                  | System Response             |
+| --------------------------- | --------------------------- |
+| ⏰ Wake-up time reached      | Alarm starts                |
+| 👁️ Eyes open               | Buzzer keeps buzzing        |
+| 😴 Eyes closed              | System verifies sleep       |
+| 😴 Eyes closed continuously | Buzzer turns OFF            |
+| 👀 Eyes open again          | Buzzer turns ON             |
+| 📷 No face detected         | System continues monitoring |
+
+---
+
+# Current Status
+
+The project is currently under development.
+
+
