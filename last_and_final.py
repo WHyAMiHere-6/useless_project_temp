@@ -12,8 +12,8 @@ from collections import deque
 # IP ADDRESSES
 # ============================================================
 
-ESP32_IP = "192.168.137.54"        # ESP32-CAM
-CONTROLLER_IP = "192.168.137.90"   # ESP32 buzzer/motor controller
+ESP32_IP = "192.168.137.103"        # ESP32-CAM
+CONTROLLER_IP = "192.168.137.180"   # ESP32 buzzer/motor controller
 
 STREAM_URL = f"http://{ESP32_IP}:81/stream"
 ALERT_URL = f"http://{CONTROLLER_IP}/alert"
