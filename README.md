@@ -220,8 +220,14 @@ The project uses two ESP32 boards and a laptop for processing.
 
 ---
 
-# Current Status
+## 🚀 Getting Started
 
-The project is currently under development.
+### 1. Hardware Components
+
+Before assembling the system, the required hardware components are shown below.
+
+![Hardware Components](images/components.jpg)
+
+
 
 
