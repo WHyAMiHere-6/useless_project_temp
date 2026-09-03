@@ -297,3 +297,10 @@ At this stage, the setup was fully functional but absolutely covered in messy wi
 <img src="imagesraw-setup.jpg" alt="Raw Hardware Setup" width="800">
 
 ---
+### 8. The Polished Circuit ✨🔌
+
+After surviving the messy prototype stage, we finally cleaned everything up and assembled the **polished circuit**.
+
+The final setup keeps the wiring organized and connects the ESP32, OLED, LEDs, buzzer, and push button in a much cleaner configuration. 🎉
+
+<img src="images/imagespolished-circuit.jpg" alt="Polished Circuit" width="800">
