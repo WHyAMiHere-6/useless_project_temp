@@ -288,8 +288,4 @@ The wiring, however, was an entirely different story. 😭😂
 
 At this stage, the setup was fully functional but absolutely covered in messy wires. It wasn't pretty, but hey — if it works, it works! 💀
 
-"Raw Hardware Setup" (images/raw-setup.jpg)
-
-
-
-
+![Raw Hardware Setup](imagesraw-setup.jpg)
