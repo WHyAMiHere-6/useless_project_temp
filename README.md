@@ -228,6 +228,61 @@ Before assembling the system, the required hardware components are shown below.
 
 ![Hardware Components](images/components.jpg)
 
+### 2. The ESP32-CAM Struggle 📷💀
+
+Before getting to the actual drowsiness detection, we had to make the ESP32-CAM behave first!  
+A *lot* of time went into testing the camera, adjusting the **video quality, resolution, and FPS**, and finding settings that gave us a smooth and usable video stream.
+
+![ESP32-CAM Testing](images/esp32-cam-testing.jpg)
+
+### 3. Downloading Libraries... Slowly 🐌
+
+Once the camera was finally behaving, we had another challenge: installing all the required libraries.
+
+The internet had other plans.  
+Downloading and installing the libraries with our **slow internet connection** took surprisingly long — but eventually, we got everything set up! 😭
+
+![Library Installation](images/library-installation.jpg)
+
+### 4. Eyes: Open or Closed? 👀
+
+After surviving the ESP32-CAM setup and the library download boss fight, it was finally time for some actual computer vision. 😭
+
+The first detection we implemented was **eye-state detection** — identifying whether the eyes were **open or closed**. Thankfully, this part came together pretty quickly! ⚡
+
+![Eye Detection](images/eye-detection.jpg)
+
+### 5. Hardware Setup — Surprisingly Easy 🔌😌
+
+After the software-side struggles, we finally got to the hardware setup.
+
+Thankfully, connecting the ESP32 and ESP32-CAM and getting the required hardware connections in place was **pretty straightforward and quick**. No major drama this time. 😭😂
+
+![Hardware Setup](images/hardware-setup.jpg)
+
+6. The UI Never Wanted to Cooperate 🫠💻
+
+With both the ESP32 and ESP32-CAM connected, we started testing different UI designs.
+
+And this is where we lost a lot of time. 😭
+Getting the right UI, proper communication between the two ESPs, and everything working reliably together took several rounds of testing, changing, breaking, and testing again.
+
+Eventually, we found a UI that actually worked the way we wanted. 🎉
+
+"UI Testing" (images/ui-testing.jpg)
+
+7. The First Raw Setup 🔌💀
+
+Finally, the raw setup was complete! 🎉
+
+Everything was connected and working — which was great...
+
+The wiring, however, was an entirely different story. 😭😂
+
+At this stage, the setup was fully functional but absolutely covered in messy wires. It wasn't pretty, but hey — if it works, it works! 💀
+
+"Raw Hardware Setup" (images/raw-setup.jpg)
+
 
 
 
