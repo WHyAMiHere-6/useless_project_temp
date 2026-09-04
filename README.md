@@ -109,8 +109,8 @@ Because apparently,
 ## 🔌 Schematic Diagram
 
 The schematic diagram below shows the complete hardware connections of the **ESP32 + ESP32-CAM based drowsiness detection system**, including the power supply, communication, display, and alert components.
+<img src="images/schematic.png" alt="Schematic" width="800">
 
-![Sleep.exe](images/schematic.png)
 
 # System Architecture
 
