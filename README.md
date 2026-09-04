@@ -304,3 +304,13 @@ After surviving the messy prototype stage, we finally cleaned everything up and 
 The final setup keeps the wiring organized and connects the ESP32, OLED, LEDs, buzzer, and push button in a much cleaner configuration. 🎉
 
 <img src="images/imagespolished-circuit.jpg" alt="Polished Circuit" width="800">
+
+## 🎥 Demo Videos
+
+After all the testing, debugging, wiring chaos, and UI struggles, it's finally time to see the system in action! 😂🔥
+
+All the **demo videos, testing clips, and final system demonstrations** are available here:
+
+👉 **[📂 View All Demo Videos](https://drive.google.com/drive/folders/1Cde7My-DKTqwvlyKMg2dHCbUlnAFO3ke?usp=drive_link)**
+
+The folder contains the different stages of testing and the final working demonstrations of the project.
