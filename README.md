@@ -314,3 +314,9 @@ All the **demo videos, testing clips, and final system demonstrations** are avai
 👉 **[📂 View All Demo Videos](https://drive.google.com/drive/folders/1Cde7My-DKTqwvlyKMg2dHCbUlnAFO3ke?usp=drive_link)**
 
 The folder contains the different stages of testing and the final working demonstrations of the project.
+
+## 🏁 Conclusion
+
+The project was successfully developed and tested as a working **drowsiness detection system** using the ESP32 and ESP32-CAM. Through multiple stages of testing and improvements, we achieved reliable eye-state detection and a functional user interface.
+
+This project gave us valuable hands-on experience in **embedded systems, computer vision, hardware integration, and UI development**.
