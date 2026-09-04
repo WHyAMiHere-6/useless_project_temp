@@ -21,15 +21,15 @@ Instead of helping the user wake up in the morning, **Sleep.exe tries to make th
 
 At the user's scheduled wake-up time, the alarm starts buzzing. The system uses an **ESP32-CAM** to monitor the user's face and **computer vision** to determine whether their eyes are open or closed.
 
-* 👁️ **Eyes open → Buzzer ON**
-* 😴 **Eyes closed → Buzzer OFF**
-* 👀 **Eyes open again → Buzzer ON again**
+*  **Eyes open → Buzzer ON**
+*  **Eyes closed → Buzzer OFF**
+*  **Eyes open again → Buzzer ON again**
 
 The alarm only stops when the system detects that the user has gone back to sleep.
 
 In short:
 
-> **An alarm clock that gets angry when you wake up! 😂**
+> **An alarm clock that gets angry when you wake up!**
 
 ---
 
@@ -39,7 +39,7 @@ We already have alarm clocks that wake people up.
 
 But we discovered another extremely important problem that nobody asked us to solve:
 
-### **"What if I actually wake up when I have to?"** 😭
+### **"What if I actually wake up when I have to?"** 
 
 Early mornings are painful.
 
@@ -71,7 +71,7 @@ At the scheduled wake-up time:
 
 Because apparently,
 
-> **even sleeping now needs verification.** 😂
+> **even sleeping now needs verification.** 
 
 ---
 
@@ -111,11 +111,11 @@ Because apparently,
 The project uses two ESP32 boards and a laptop for processing.
 
 ```text
-       📷 ESP32-CAM
+        ESP32-CAM
              │
              │ Wi-Fi
              ▼
-       💻 Laptop
+         Laptop
              │
        Python + OpenCV
              │
@@ -123,10 +123,10 @@ The project uses two ESP32 boards and a laptop for processing.
              │
        ┌─────┴─────┐
        │           │
-    👁️ OPEN     😴 CLOSED
+    OPEN        CLOSED
        │           │
        ▼           ▼
-   🔊 BUZZER     🔇 OFF
+    BUZZER      OFF
        │           │
        └─────┬─────┘
              │
@@ -135,7 +135,7 @@ The project uses two ESP32 boards and a laptop for processing.
              │
         ┌────┴────┐
         ▼         ▼
-     🔊 Buzzer   📺 OLED
+      Buzzer    OLED
 ```
 
 ---
@@ -158,12 +158,12 @@ The project uses two ESP32 boards and a laptop for processing.
                         │
                         ▼
               ┌────────────────────┐
-              │    Buzzer ON 🔊    │
+              │    Buzzer ON       │
               └─────────┬──────────┘
                         │
                         ▼
               ┌────────────────────┐
-              │    ESP32-CAM 📷    │
+              │    ESP32-CAM       │
               │ Captures user's    │
               │      face          │
               └─────────┬──────────┘
@@ -172,7 +172,7 @@ The project uses two ESP32 boards and a laptop for processing.
                         │
                         ▼
               ┌────────────────────┐
-              │   Laptop 💻        │
+              │   Laptop           │
               │ Python + OpenCV    │
               └─────────┬──────────┘
                         │
@@ -187,13 +187,13 @@ The project uses two ESP32 boards and a laptop for processing.
               Eyes Open    Eyes Closed
                   │           │
                   ▼           ▼
-             🔊 BUZZER ON   Confirm for
+              BUZZER ON   Confirm for
                             a few seconds
                                 │
                                 ▼
                          ┌─────────────┐
                          │  BUZZER OFF │
-                         │     😴      │
+                         │             │
                          └─────────────┘
                                 │
                                 ▼
@@ -202,7 +202,7 @@ The project uses two ESP32 boards and a laptop for processing.
                                YES
                                 │
                                 ▼
-                         🔊 BUZZER ON
+                          BUZZER ON
 ```
 
 ---
@@ -211,16 +211,16 @@ The project uses two ESP32 boards and a laptop for processing.
 
 | User State                  | System Response             |
 | --------------------------- | --------------------------- |
-| ⏰ Wake-up time reached      | Alarm starts                |
-| 👁️ Eyes open               | Buzzer keeps buzzing        |
-| 😴 Eyes closed              | System verifies sleep       |
-| 😴 Eyes closed continuously | Buzzer turns OFF            |
-| 👀 Eyes open again          | Buzzer turns ON             |
-| 📷 No face detected         | System continues monitoring |
+|  Wake-up time reached       | Alarm starts                |
+|  Eyes open                  | Buzzer keeps buzzing        |
+|  Eyes closed                | System verifies sleep       |
+|  Eyes closed continuously   | Buzzer turns OFF            |
+|  Eyes open again            | Buzzer turns ON             |
+|  No face detected           | System continues monitoring |
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Hardware Components
 
@@ -230,7 +230,7 @@ Before assembling the system, the required hardware components are shown below.
 
 ---
 
-### 2. The ESP32-CAM Struggle 📷💀
+### 2. The ESP32-CAM Struggle 
 
 Before getting to the actual drowsiness detection, we had to make the ESP32-CAM behave first!\
 A *lot* of time went into testing the camera, adjusting the **video quality, resolution, and FPS**, and finding settings that gave us a smooth and usable video stream.
@@ -239,83 +239,82 @@ A *lot* of time went into testing the camera, adjusting the **video quality, res
 
 ---
 
-### 3. Downloading Libraries... Slowly 🐌
+### 3. Downloading Libraries... Slowly 
 
 Once the camera was finally behaving, we had another challenge: installing all the required libraries.
 
 The internet had other plans.\
-Downloading and installing the libraries with our **slow internet connection** took surprisingly long — but eventually, we got everything set up! 😭
+Downloading and installing the libraries with our **slow internet connection** took surprisingly long — but eventually, we got everything set up! 
 
 <img src="imageslibrary-installation.jpg" alt="Library Installation" width="800">
 
 ---
 
-### 4. Eyes: Open or Closed? 👀
+### 4. Eyes: Open or Closed? 
 
-After surviving the ESP32-CAM setup and the library download boss fight, it was finally time for some actual computer vision. 😭
+After surviving the ESP32-CAM setup and the library download boss fight, it was finally time for some actual computer vision. 
 
-The first detection we implemented was **eye-state detection** — identifying whether the eyes were **open or closed**. Thankfully, this part came together pretty quickly! ⚡
+The first detection we implemented was **eye-state detection** — identifying whether the eyes were **open or closed**. Thankfully, this part came together pretty quickly! 
 
 <img src="imageseye-detection.jpg" alt="Eye Detection" width="800">
 
 ---
 
-### 5. Hardware Setup — Surprisingly Easy 🔌😌
+### 5. Hardware Setup — Surprisingly Easy 
 
 After the software-side struggles, we finally got to the hardware setup.
 
-Thankfully, connecting the ESP32 and ESP32-CAM and getting the required hardware connections in place was **pretty straightforward and quick**. No major drama this time. 😭😂
+Thankfully, connecting the ESP32 and ESP32-CAM and getting the required hardware connections in place was **pretty straightforward and quick**. No major drama this time. 
 
 <img src="imageshardware-setup.jpg" alt="Hardware Setup" width="800">
 
 ---
 
-### 6. The UI Never Wanted to Cooperate 🫠💻
+### 6. The UI Never Wanted to Cooperate 
 
 With both the ESP32 and ESP32-CAM connected, we started testing different UI designs.
 
-And this is where we lost a lot of time. 😭
+And this is where we lost a lot of time. 
 
 Getting the right UI, proper communication between the two ESPs, and everything working reliably together took several rounds of testing, changing, breaking, and testing again.
 
-Eventually, we found a UI that actually worked the way we wanted. 🎉
+Eventually, we found a UI that actually worked the way we wanted. 
 
 <img src="imagesui-testing.jpg" alt="UI Testing" width="800">
 
 ---
 
-### 7. The First Raw Setup 🔌💀
+### 7. The First Raw Setup 
 
-Finally, the raw setup was complete! 🎉
+Finally, the raw setup was complete! 
 
 Everything was connected and working — which was great...
 
-The wiring, however, was an entirely different story. 😭😂
+The wiring, however, was an entirely different story. 
 
-At this stage, the setup was fully functional but absolutely covered in messy wires. It wasn't pretty, but hey — if it works, it works! 💀
-
+At this stage, the setup was fully functional but absolutely covered in messy wires. It wasn't pretty, but hey — if it works, it works! 
 <img src="imagesraw-setup.jpg" alt="Raw Hardware Setup" width="800">
 
 ---
-### 8. The Polished Circuit ✨🔌
+### 8. The Polished Circuit 
 
 After surviving the messy prototype stage, we finally cleaned everything up and assembled the **polished circuit**.
 
-The final setup keeps the wiring organized and connects the ESP32, OLED, LEDs, buzzer, and push button in a much cleaner configuration. 🎉
+The final setup keeps the wiring organized and connects the ESP32, OLED, LEDs, buzzer, and push button in a much cleaner configuration. 
 
 <img src="images/imagespolished-circuit.jpg" alt="Polished Circuit" width="800">
 
-## 🎥 Demo Videos
+##  Demo Videos
 
-After all the testing, debugging, wiring chaos, and UI struggles, it's finally time to see the system in action! 😂🔥
+After all the testing, debugging, wiring chaos, and UI struggles, it's finally time to see the system in action! 
 
 All the **demo videos, testing clips, and final system demonstrations** are available here:
 
-👉 **[📂 View All Demo Videos](https://drive.google.com/drive/folders/1Cde7My-DKTqwvlyKMg2dHCbUlnAFO3ke?usp=drive_link)**
+ **[📂 View All Demo Videos](https://drive.google.com/drive/folders/1Cde7My-DKTqwvlyKMg2dHCbUlnAFO3ke?usp=drive_link)**
 
 The folder contains the different stages of testing and the final working demonstrations of the project.
 
-## 🏁 Conclusion
+##  Conclusion
 
 The project was successfully developed and tested as a working **drowsiness detection system** using the ESP32 and ESP32-CAM. Through multiple stages of testing and improvements, we achieved reliable eye-state detection and a functional user interface.
 
