@@ -235,7 +235,7 @@ Before assembling the system, the required hardware components are shown below.
 Before getting to the actual drowsiness detection, we had to make the ESP32-CAM behave first!\
 A *lot* of time went into testing the camera, adjusting the **video quality, resolution, and FPS**, and finding settings that gave us a smooth and usable video stream.
 
-<img src="imagesp32-cam-testing.jpg" alt="ESP32-CAM Testing" width="800">
+<img src="images/imagesesp32-cam-testing.jpg" alt="ESP32-CAM Testing" width="800">
 
 ---
 
