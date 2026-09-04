@@ -106,6 +106,10 @@ Because apparently,
 
 ---
 
+## Circuit Diagram / Schematic
+
+
+
 # System Architecture
 
 The project uses two ESP32 boards and a laptop for processing.
